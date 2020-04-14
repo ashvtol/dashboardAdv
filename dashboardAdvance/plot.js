@@ -85,6 +85,15 @@ function draw() {
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x));
 
+
+        // X label
+        svg.append("text")
+            .attr('font-weight',900)
+            .attr("transform", "translate(" + (width / 2) + " ," + (height + margin.bottom) + ")")
+            .style("text-anchor", "middle")
+            .text("Time");
+
+
         // Add Y axis
         var y = d3.scaleLinear()
             .domain([0, d3.max(data, function (d) {
@@ -93,6 +102,17 @@ function draw() {
             .range([height, 0]);
         svg.append("g")
             .call(d3.axisLeft(y));
+
+        // Add y label
+
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0 - margin.left)
+            .attr("x",0 - (height / 2))
+            .attr("dy", "1em")
+            .attr('font-weight',900)
+            .style("text-anchor", "middle")
+            .text(stat);
 
         // Add demarcations
         var resting_demarc = svg.append("line")
@@ -104,6 +124,12 @@ function draw() {
             .attr("stroke-width", 2)
             .attr("stroke", "black");
 
+        var text = svg
+            .append("text")
+            .attr('font-weight',900)
+            .attr('transform', 'translate('+x(data[index].resting_line+30)+','+height/1.5+')rotate(-90)')
+            .text("Exercise phase starts");
+            // .attr('transform', 'rotate(90 -10 10)');
 
         var exercise_demarc = svg.append("line")
             .style("stroke-dasharray", "3,3")
@@ -113,6 +139,13 @@ function draw() {
             .attr("y2", 0)
             .attr("stroke-width", 2)
             .attr("stroke", "black");
+
+        var text = svg
+            .append("text")
+            .attr('font-weight',900)
+            .attr('transform', 'translate('+x(data[index].exercise_line+30)+','+height/1.5+')rotate(-90)')
+            .text("Recovery phase starts");
+        // .attr('transform', 'rotate(90 -10 10)');
 
 
         // Add the line
