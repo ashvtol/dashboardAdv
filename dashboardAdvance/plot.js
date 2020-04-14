@@ -66,7 +66,7 @@ function draw() {
             width = 1500 - margin.left - margin.right,
             height = 320 - margin.top - margin.bottom;
 
-        var svg = d3.select("body")
+        var svg = d3.select("#linePlots")
             .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
@@ -91,13 +91,7 @@ function draw() {
             .range([height, 0]);
         svg.append("g")
             .call(d3.axisLeft(y));
-        var median = svg.append("line")
-            .attr("x1", 0)
-            .attr("y1", y(threshold))
-            .attr("x2", width)
-            .attr("y2", y(threshold))
-            .attr("stroke-width", 2)
-            .attr("stroke", "black");
+        
         // Add the line
         svg.append("path")
             .datum(data)
