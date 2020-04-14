@@ -4,6 +4,7 @@
     <list default="true" id="268facb5-0e89-464e-9fe7-3c46e868997d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plot.js" beforeDir="false" afterPath="$PROJECT_DIR$/plot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +71,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge branch 'initial-plot' of https://github.com/ashvtol/dashboardAdv into UIPrototype&#10;&#10;# Conflicts:&#10;#&#9;dashboardAdvance/.idea/workspace.xml&#10;#&#9;dashboardAdvance/plot.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'initial-plot' of https://github.com/ashvtol/dashboardAdv into UIPrototype&#10;&#10;# Conflicts:&#10;#&#9;dashboardAdvance/.idea/workspace.xml&#10;#&#9;dashboardAdvance/plot.js" />
   </component>
   <component name="WindowStateProjectService">
     <state x="326" y="94" key="CommitChangelistDialog2" timestamp="1586827214393">
