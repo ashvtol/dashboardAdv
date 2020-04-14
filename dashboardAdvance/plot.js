@@ -66,7 +66,7 @@ function draw() {
         console.log(data[index].resting_line);
         var margin = {top: 10, right: 30, bottom: 30, left: 60},
             width = 1500 - margin.left - margin.right,
-            height = 320 - margin.top - margin.bottom;
+            height = 240 - margin.top - margin.bottom;
 
         var svg = d3.select("#linePlots")
             .append("svg")
