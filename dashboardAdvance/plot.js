@@ -64,7 +64,7 @@ function draw() {
         data = dataTranspose(data, globalStart, data[index].x.length, index, stat);
         var margin = {top: 10, right: 30, bottom: 30, left: 60},
             width = 1500 - margin.left - margin.right,
-            height = 320 - margin.top - margin.bottom;
+            height = 250 - margin.top - margin.bottom;
 
         var svg = d3.select("#linePlots")
             .append("svg")
@@ -91,7 +91,7 @@ function draw() {
             .range([height, 0]);
         svg.append("g")
             .call(d3.axisLeft(y));
-        
+
         // Add the line
         svg.append("path")
             .datum(data)

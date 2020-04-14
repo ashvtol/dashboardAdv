@@ -2,9 +2,25 @@
 <html>
 <head>
     <script src="https://d3js.org/d3.v4.js"></script>
-    <script src = "plot.js"></script>
+    <script src="plot.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style = "background-color: antiquewhite">
+<body style="background-color: antiquewhite">
+<div id="Header">
+    <h3>Dashboard</h3>
+</div>
+<div id="Boxes">
+    <div class="eachBox" id="Box2">
+        Sports Menu & Subject Name
+    </div>
+    <div class="eachBox" id="Box3">
+        Smoking: ?<br>
+        Age: ?<br>
+        Alcohol: ?<br>
+    </div>
+    <div class="eachBox" id="Box4"></div>
+    <div class="eachBox" id="Box5"></div>
+</div>
 <div id="linePlots"></div>
 <script>
     draw();
