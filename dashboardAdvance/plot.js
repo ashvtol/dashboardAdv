@@ -126,7 +126,7 @@ function draw() {
 
         var text = svg
             .append("text")
-            .attr('font-weight',900)
+            // .attr('font-weight',900)
             .attr('transform', 'translate('+x(data[index].resting_line+30)+','+height/1.5+')rotate(-90)')
             .text("Exercise phase starts");
             // .attr('transform', 'rotate(90 -10 10)');
@@ -142,7 +142,7 @@ function draw() {
 
         var text = svg
             .append("text")
-            .attr('font-weight',900)
+            // .attr('font-weight',900)
             .attr('transform', 'translate('+x(data[index].exercise_line+30)+','+height/1.5+')rotate(-90)')
             .text("Recovery phase starts");
         // .attr('transform', 'rotate(90 -10 10)');
