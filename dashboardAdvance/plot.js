@@ -5,7 +5,8 @@ function draw() {
         let dat = [];
         let value = 'data[index].' + stat + '[i]';
         for (let i = start; i < end; i++) {
-            dat.push({x: data[index].x[i], y: eval(value)})
+            dat.push({x: data[index].x[i], y: eval(value),
+                resting_line:eval(data[index].resting), exercise_line: eval(data[index].exercise)})
         }
         return dat;
     }
@@ -60,13 +61,14 @@ function draw() {
     getData();
 
     function drawPlot(stat, data) {
-        let index = 120;
+        let index = 1;
         data = dataTranspose(data, globalStart, data[index].x.length, index, stat);
+        console.log(data[index].resting_line);
         var margin = {top: 10, right: 30, bottom: 30, left: 60},
             width = 1500 - margin.left - margin.right,
-            height = 220 - margin.top - margin.bottom;
+            height = 320 - margin.top - margin.bottom;
 
-        var svg = d3.select("#linePlots")
+        var svg = d3.select("body")
             .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
@@ -91,6 +93,27 @@ function draw() {
             .range([height, 0]);
         svg.append("g")
             .call(d3.axisLeft(y));
+
+        // Add demarcations
+        var resting_demarc = svg.append("line")
+            .style("stroke-dasharray", "3,3")
+            .attr("x1", x(data[index].resting_line))
+            .attr("y1", height)
+            .attr("x2", x(data[index].resting_line))
+            .attr("y2", 0)
+            .attr("stroke-width", 2)
+            .attr("stroke", "black");
+
+
+        var exercise_demarc = svg.append("line")
+            .style("stroke-dasharray", "3,3")
+            .attr("x1", x(data[index].exercise_line))
+            .attr("y1", height)
+            .attr("x2", x(data[index].exercise_line))
+            .attr("y2", 0)
+            .attr("stroke-width", 2)
+            .attr("stroke", "black");
+
 
         // Add the line
         svg.append("path")
